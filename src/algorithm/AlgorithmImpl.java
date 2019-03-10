@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 /**
  * 算法实现类
- * 基于以下BCNF:
+ * 基于以下BNF:
  * <pre>
  * E=T{(+|-)T}
  * T=F{(*|/)F}
@@ -21,14 +21,14 @@ public class AlgorithmImpl implements Algorithm {
         ADD, SUB, MUL, DIV, LEFT, RIGHT, NUMBER, END
     }
 
-    //储存正则表达式
+    //储存字符串参数去掉空白字符的字符串
     private String expression;
-    //解析的位置
+    //当前解析的位置
     private int pos;
     //数字匹配
     private Pattern numberPatt = Pattern.compile("(\\d+\\.?\\d+)|(\\d+)");
-    Matcher matcher;
-    //单词
+    private Matcher matcher;
+    //单词token
     private TokenType token;
     //单词对应的实际字符串
     private String tokenString;
