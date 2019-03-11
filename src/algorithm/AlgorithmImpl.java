@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class AlgorithmImpl implements Algorithm {
     //代表+-*/()数字
-    enum TokenType {
+    public static enum TokenType {
         ADD, SUB, MUL, DIV, LEFT, RIGHT, NUMBER, END
     }
 
