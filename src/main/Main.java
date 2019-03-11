@@ -1,7 +1,10 @@
 package main;
 
+import java.util.ArrayList;
+
 import algorithm.Algorithm;
 import algorithm.AlgorithmImpl;
+import fileoperator.FileOperator;
 import generator.ExpressionGenerator;
 
 public class Main {
@@ -13,10 +16,16 @@ public class Main {
     	int i = 10;
     	
     	Algorithm algorithm = new AlgorithmImpl();
+    	FileOperator fileOperator=new FileOperator();
     	try {
     		while( i-- != 0 ) {
-	    		String onPending = ExpressionGenerator.getInfixExpression(true);
-	    		System.out.println(algorithm.translateToSuffixExp(onPending));
+	    		String onPending = ExpressionGenerator.getInfixExpression(false);
+	    		fileOperator.expressionoutput(onPending); 	
+	    	//	System.out.println(algorithm.translateToSuffixExp(onPending));
+    		}
+    		ArrayList<String> expressions=fileOperator.getexpressions();
+    		while( i++ != expressions.size() ) {	    		
+	    		System.out.println(algorithm.translateToSuffixExp(expressions.get(i)));
     		}
     	} catch (Exception e) {
             System.out.println(e.getMessage());
@@ -45,5 +54,6 @@ public class Main {
 	            System.out.println(e.getMessage());
 	        }
      */
+    	  	
     }
 }
