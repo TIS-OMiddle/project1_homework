@@ -19,7 +19,7 @@ public class Main {
     	FileOperator fileOperator=new FileOperator();
     	try {
     		while( i-- != 0 ) {
-	    		String onPending = ExpressionGenerator.getInfixExpression(false);
+	    		String onPending = ExpressionGenerator.getInfixExpression(true);
 	    		fileOperator.expressionoutput(onPending); 	
 	    	//	System.out.println(algorithm.translateToSuffixExp(onPending));
     		}
