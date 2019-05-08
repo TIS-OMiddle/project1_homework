@@ -11,6 +11,11 @@ import java.util.Scanner;
 
 public class FileOperator {
 	private String filepath="expressions.txt";
+
+	public void setFilepath(String filepath){
+        this.filepath = filepath;
+    }
+
 	public Boolean expressionoutput(String string) {
 		// 1：利用File类找到要操作的对象
         File file = new File(filepath);

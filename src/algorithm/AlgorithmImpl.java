@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class AlgorithmImpl implements Algorithm {
     //代表+-*/()数字
-    public static enum TokenType {
+    private static enum TokenType {
         ADD, SUB, MUL, DIV, LEFT, RIGHT, NUMBER, END
     }
 
@@ -133,7 +133,7 @@ public class AlgorithmImpl implements Algorithm {
             res = tokenString;
             match(TokenType.NUMBER);
         } else {
-            throw new Exception("\"" + expression + "\"位置" + pos + ":应该为表达式或数字");
+            throw new Exception("\"" + expression + "\" 位置" + pos + ":应该为表达式或数字");
         }
         return res;
     }
