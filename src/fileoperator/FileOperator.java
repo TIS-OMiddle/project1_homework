@@ -26,7 +26,7 @@ public class FileOperator {
         try {
         	  //2：准备输出流
             Writer out = new FileWriter(file,true);
-			out.write(string+"\r\n");
+			out.write(string+";\r\n");
 			out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -38,41 +38,21 @@ public class FileOperator {
 	}
 	
 
-public ArrayList<String> getexpressions() {
-
-		// 使用ArrayList来存储每行读取到的字符串
-
-		ArrayList<String> arrayList = new ArrayList<>();
-
+public String[] getexpressions() {
+		String res="",str;
 		try {
-
 			FileReader fr = new FileReader(filepath);
-
 			BufferedReader bf = new BufferedReader(fr);
-
-			String str;
-
 			// 按行读取字符串
-
 			while ((str = bf.readLine()) != null) {
-
-				arrayList.add(str);
-
+				res+=str;
 			}
-
 			bf.close();
-
 			fr.close();
 
 		} catch (IOException e) {
-
 			e.printStackTrace();
-
 		}
-
-		return arrayList;
-
+		return res.split(";");
 	}
-
-	
 }

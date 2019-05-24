@@ -20,7 +20,7 @@ public class Main {
         //翻译
         if (isTranslate) {
             fileOperator.setFilepath(args[1]);
-            ArrayList<String> expressions = fileOperator.getexpressions();
+            String[] expressions = fileOperator.getexpressions();
             for (String exp : expressions) {
                 try {
                     System.out.println(exp + " 转为后缀: " + algorithm.translateToSuffixExp(exp));
